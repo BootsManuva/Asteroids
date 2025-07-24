@@ -1,7 +1,7 @@
 import pygame
 from constants import *
 from circleshape import CircleShape
-from player import Player   
+from player import Player
 
 
 
@@ -20,6 +20,7 @@ def main():
 
         screen.fill("black")
         player.draw(screen)
+        player.update(dt)
         pygame.display.flip()
         dt = clock.tick(60) /1000 # Convert milliseconds to seconds
 
