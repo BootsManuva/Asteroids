@@ -2,7 +2,8 @@ import pygame
 from constants import *
 from circleshape import CircleShape
 from player import Player
-
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 
 
 def main():
@@ -10,12 +11,17 @@ def main():
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     dt = 0 
-           
+
+    asteroids = pygame.sprite.Group()
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     Player.containers = (updateable, drawable)
+    Asteroid.containers = (asteroids, updateable, drawable)
+    AsteroidField.containers = (updateable,)
 
     player = Player(SCREEN_WIDTH /2, SCREEN_HEIGHT /2)
+    asteroid_field = AsteroidField()
+    
 
     
     
