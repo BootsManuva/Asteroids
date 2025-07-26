@@ -46,7 +46,7 @@ def main():
                 return pygame.quit
             for shot in shots:
                 if item.collision(shot):
-                    item.()
+                    item.split()
                     shot.kill()
 
             
